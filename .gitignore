@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+*.vsidx
+.vs/Hedcut-3d/FileContentIndex/read.lock
+.vs/Hedcut-3d/v17
+Hedcut-3d.sln
+Hedcut-3d.vcxproj
+*.filters
+*.user
