@@ -37,3 +37,4 @@ Hedcut-3d.sln
 Hedcut-3d.vcxproj
 *.filters
 *.user
+external/igl
