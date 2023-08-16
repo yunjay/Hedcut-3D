@@ -255,12 +255,12 @@ public:
         return size;
     }
     static void printComputeShaderSizes() {
-        cout << "Max Work Group count : " << (int)getMaxComputeWorkGroupCount(0) << ", " << (int)getMaxComputeWorkGroupCount(1) << ", " << (int)getMaxComputeWorkGroupCount(2) << ".\n";
-        cout << "Max Work Group local size : " << (int)getMaxComputeWorkGroupSize(0) << ", " << (int)getMaxComputeWorkGroupSize(1) << ", " << (int)getMaxComputeWorkGroupSize(2) << ".\n";
-        cout << "Max compute shader invocations : " << (int)getMaxComputeWorkGroupInvocations() << "\n";
-        cout << "Max compute shader shared memory size : " << (int)getMaxComputeSharedMemorySize() << "\n";
-        cout << "Max SSBO size : " << (int)getMaxShaderStorageBlockSize() << "\n";
-        cout << "Max SSBO bindings : " << (int)getMaxShaderStorageBufferBindings() << "\n";
-        cout << "Max UBO size : " << (int)getMaxUniformBlockSize() << "\n";
+        std::cout << "Max Work Group count : " << (int)getMaxComputeWorkGroupCount(0) << ", " << (int)getMaxComputeWorkGroupCount(1) << ", " << (int)getMaxComputeWorkGroupCount(2) << ".\n";
+        std::cout << "Max Work Group local size : " << (int)getMaxComputeWorkGroupSize(0) << ", " << (int)getMaxComputeWorkGroupSize(1) << ", " << (int)getMaxComputeWorkGroupSize(2) << ".\n";
+        std::cout << "Max compute shader invocations : " << (int)getMaxComputeWorkGroupInvocations() << "\n";
+        std::cout << "Max compute shader shared memory size : " << (int)getMaxComputeSharedMemorySize() << "\n";
+        std::cout << "Max SSBO size : " << (int)getMaxShaderStorageBlockSize() << "\n";
+        std::cout << "Max SSBO bindings : " << (int)getMaxShaderStorageBufferBindings() << "\n";
+        std::cout << "Max UBO size : " << (int)getMaxUniformBlockSize() << "\n";
     }
 };

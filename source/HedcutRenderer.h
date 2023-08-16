@@ -4,5 +4,24 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <GL/glew.h>
 
-class HedcutRenderer{
-}
+using glm::vec3; using glm::vec4; using glm::vec2;
+using glm::dot; using glm::cross; using glm::normalize; using glm::sign;
+class HedcutRenderer {
+public:
+// I'd rather not get into coding a scene graph / scene class.
+// I'll stick to one mesh at a time.
+//	static void Render(GLuint fbo, Scene scene, Camera camera) {}
+	static void Render(GLuint fbo, Mesh mesh, Camera camera){
+		// Bind fbo
+		glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+
+
+	}
+	static void Render(Mesh mesh, Camera camera) {
+		// 0 : default framebuffer
+		Render(0, scene, camera);
+	}
+	void RenderToImage() {
+
+	}
+};
