@@ -21,7 +21,9 @@ public:
 		// 0 : default framebuffer
 		Render(0, scene, camera);
 	}
-	void RenderToImage() {
-
+	static void RenderToImage(Mesh mesh, Camera camera) {
+		Framebuffer fboToTexture;
+		Texture renderTargetTexture;
+		Render(fboToTexture, mesh, camera);
 	}
 };
