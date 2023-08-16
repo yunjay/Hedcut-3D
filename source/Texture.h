@@ -16,6 +16,11 @@ public:
 		return m_format;
 	}
 private:
+  GLuint m_handle;
   int m_width, m_height;
   GLenum m_format;
+  void allocateVRAM(){
+		glGenTextures(1, &m_handle);
+		glBindTexture(GL_TEXTURE_2D, m_handle);
+{
 }
