@@ -12,6 +12,7 @@ return m_width;
 int GetHeight() const {
 return m_height;
 }
+//GL_RGBA8, GL_RGBA32F, GL_DEPTH_COMPONENT, GL_DEPTH24_STENCIL8
 GLenum GetImageFormat() const {
 return m_format;
 }
