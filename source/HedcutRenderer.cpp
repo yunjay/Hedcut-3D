@@ -28,3 +28,8 @@ void HedcutRenderer::RenderToImage(Mesh mesh, Camera camera) {
 		HedcutRenderer::Render(fboToTexture, mesh, camera);
     // TODO
 	}
+void HedcutRenderer::GBufferRenderPass(){
+}
+void HedcutRenderer::RenderColoredFaces(){
+}
+
