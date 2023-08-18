@@ -12,7 +12,7 @@ class ModelLoader {
 public:
 	static bool loadAssimp(Mesh *mesh, std::string path) {
 		Assimp::Importer importer;
-		if (mesh->vertices.empty() == false) {
+		if (mesh->m_vertices.empty() == false) {
 			return false; //if not empty return
 		}
 		std::cout << "\nLoading file : " << path << ".\n";
@@ -29,7 +29,7 @@ public:
 
 		omp_set_num_threads(omp_get_max_threads());
 
-		mesh->vertices.resize(aiMesh->mNumVertices, vec3(0.0f));
+		mesh->m_vertices.resize(aiMesh->mNumVertices, vec3(0.0f));
 #pragma omp parallel for
 		for (size_t i = 0; i < aiMesh->mNumVertices; i++) {
 			aiVector3D pos = aiMesh->mVertices[i];
