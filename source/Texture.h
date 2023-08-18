@@ -65,7 +65,10 @@ private:
   void allocateVRAM(){
 		glGenTextures(1, &m_handle);
 		glBindTexture(GL_TEXTURE_2D, m_handle);
+	GLenum internalFormat = GL_NONE;
+	GLenum pixelFormat = GL_NONE;
+	GLenum pixelDataType = GL_NONE;
 
-{
+  }
 
 }
