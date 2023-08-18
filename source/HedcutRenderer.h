@@ -26,4 +26,8 @@ public:
 		Texture renderTargetTexture;
 		Render(fboToTexture, mesh, camera);
 	}
+private:
+static Framebuffer m_GbufferFramebuffer;
+static Texture m_PositionTexture, m_NormalTexture, m_PrincipalDirectionTexture, m_AlbedoSpecular, m_DepthTexture;
+
 };
