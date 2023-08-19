@@ -1,3 +1,4 @@
+#pragma once
 #include <memory>
 #include <vector>
 #include <array>
@@ -6,29 +7,15 @@
 #include <fstream>
 #include <chrono>
 #include <algorithm>
-#include <unordered_map>
-#include <functional>
 
 #include <omp.h>
 
 #include <GL/glew.h>
-#include <glm/glm.hpp>
-
-#include <assimp/Importer.hpp>      
-#include <assimp/scene.h>          
-#include <assimp/postprocess.h>     
+#include <glm/glm.hpp>  
 
 using glm::vec2; using glm::vec3; using glm::vec4; 
 using glm::vec3; using glm::mat4; 
 using std::cout; using std::vector; using std::array;
-
-// Debug tools
-void printVec(glm::vec3 v) {
-	std::cout << "(" << v.x << ", " << v.y << ", " << v.z << ") ";
-}
-void printVec(glm::vec4 v) {
-	std::cout << "(" << v.x << ", " << v.y << ", " << v.z << ", " << v.w << ") ";
-}
 
 class Mesh {
 public:
@@ -36,6 +23,18 @@ public:
 		vec3 position, normal, maxPd, minPd;
 		vec2 texCoords;
 	};
+	// Setters
+	mat4 SetModelToWorld();
+	// Getters
+	vec3 GetCenter() const;
+	float GetDiagonalLength() const;
+	float GetModelScaleFactor() const;
+	mat4 GetModelToWorld() const;
+	void AllocateGPUMemory(); // allocate initially or update gpu memory
+	
+private:
+	// Should the Renderer both allocate and bind, or only bind...?
+	// I think it's fine to allocate within the renderable (mesh) but bind in the renderer.
 	GLuint m_VAO;
 	GLuint m_EBO;
 	GLuint m_VBO; //Pack everything together for cache hits
@@ -47,8 +46,8 @@ public:
 	
 	// Mesh properties
 	vec3 m_center = vec3(0.0f);
-	GLfloat m_diagonalLength = 0.0f;
-	GLfloat m_modelScaleFactor = 1.0f;
+	float m_diagonalLength = 0.0f;
+	float m_modelScaleFactor = 1.0f;
 
 	// Scene properties
 	mat4 m_modelToWorld = mat4(1.0f);
